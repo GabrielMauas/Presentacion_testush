@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: 'Inter', sans-serif;
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            background-color: antiquewhite;
+        }
+
+        h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-weight: 900;
+            font-size: 4rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #fff;
+        }
+        .section {
+            margin-top: 5rem;
+        }
+        .hero {
+            text-align: center;
+            background: linear-gradient(to right, #c21500, #ffc500);
+            color: #fff;
+            margin: 0;
+            padding: 5rem;
+            height: 36vh;
+            margin-bottom: 30%;
+        }
+
+        .hero__container {
+            background: linear-gradient(to right, #c21500, #ffc500);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem;
+            border-radius: 3rem;
+            justify-content: center;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0px 0px 50px 1px rgba(0,0,0,0.75);
+            transform: translateY(0rem);
+            animation-name: slideInTop;
+            animation-duration: 1.2s;
+        }
+        @keyframes slideInTop {
+            from {
+                transform: translateY(-100rem);
+                opacity: 0;
+            } to {
+                transform: translateY(0rem);
+                opacity: 1;
+            }
+        }
+        .hero__img {
+            border-radius: 100%;
+            width: 25rem;
+            height: 25rem;
+            margin-bottom: 3rem;
+            object-fit: cover;
+        
+        }
+        .hero__img:hover {
+            transform: scale(1.05);
+            transition: .3s ease-in-out;
+        }
+        .hero__desc {
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            border-right: solid .2rem #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 2rem;
+            animation: 
+                typewriter 2.5s steps(12) .5s, 
+                cursor .75s steps(12) infinite;
+        }
+        @keyframes typewriter {
+            0% { 
+                width: 0%; 
+            } 
+            100% { 
+                width: 12ch;
+            }
+        }
+        @keyframes cursor {
+            from, to { border-right-color: transparent; }
+            50% { border-right-color: #fff; }
+        }
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 3rem;
+        }
+        .section__title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            animation-name: slideInRight;
+            animation-duration: 1.6s;
+        }
+        .about__text {
+            font-size: 1.7rem;
+            font-weight: 500;
+            text-align: justify;
+            margin-bottom: 0.6rem;
+            animation-name: slideInLeft;
+            animation-duration: 1.6s;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: beige;
+        }
+        .gallery__photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin-bottom: 2rem;
+            row-gap: 2rem;
+            padding: 3rem;
+        }
+        .img-1 {
+            width: 26.5rem;
+            height: 26.5rem;
+            animation-name: slideInLeft;
+            animation-duration: 1.6s;
+            border-radius: 1rem;
+
+        }
+        .img-2 {
+            width: 26.5rem;
+            height: 26.5rem;
+            grid-column: 1 / 2;
+            grid: 2 / 3;
+            animation-name: slideInLeft;
+            animation-duration: 1.6s;
+            border-radius: 1rem;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            } to {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+        .img-3 {
+            width: 30rem;
+            height: 55rem;
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            animation-name: slideInRight;
+            animation-duration: 1.6s;
+            border-radius: 1rem;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            } to {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+        .footer {
+            height: 30vh;
+            background-color: #fff;
+            display: grid;
+            place-content: center;
+        }
+        .footer__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 3rem;
+            font-size: 1.5rem;
+        }
+        .footer__list a {
+            text-decoration: none;
+            color: #000;
+        }
+        .footer__list a:hover {
+            color: #ffc500;
+        }
+        @media screen and (max-width: 500px){
+            .hero__container {
+                width: 80%;
+                transform: translateY(0rem);
+            }
+            .hero {
+                height: 30vh;
+                margin-bottom: 20rem;
+            }
+            .hero__img {
+                width: 20rem;
+                height: 20rem;
+            }
+            .hero__desc {
+                font-size: 1.6rem;
+            }
+            .gallery__photos {
+                display: flex;
+                flex-direction: column;
+            }
+            .img-3 {
+                display: none;
+            }
+        }
+        @media screen and ( min-width: 1400px) {
+            .hero {
+                margin-bottom: 18rem;
+            }
+        }
+        @media screen and (min-height: 1000px) {
+            .hero__container {
+                transform: translateY(10rem);
+            }
+            .hero {
+                margin-bottom: 15rem;
+                height: 35vh;
+            }
+            @keyframes slideInTop {
+                from {
+                    transform: translateY(-100rem);
+                    opacity: 0;
+                } to {
+                    transform: translateY(10rem);
+                    opacity: 1;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero__container">
+                <img src="https://i.ibb.co/yhDbBSk/Whats-App-Video-2021-10-26-at-3-55-44-PM-1.gif" alt="Gif" class="hero__img">
+                <h1 class="hero__title">Gabriel Mauas</h1>
+                <div class="hero__desc">
+                    <p>Web Developer.</p> 
+                </div>   
+            </div>
+        </div>
+        <div class="section about">
+            <h2 class="section__title">Sobre Mí</h2>
+            <p class="about__text">
+                Hola! Me llamo Gabriel Mauas, tengo 20 años y vivo en Buenos Aires, Argentina. 
+                Soy Desarrollador Web desde principios de 2020. Me caracterizo por mi capacidad de entender nuevos conceptos y aplicarlos en mis proyectos.
+            </p>
+            <p class="about__text">
+            </p>
+            <p class="about__text">
+                Me gusta programar tanto el Frontend como el Backend por eso me considero como un desarrollador "híbrido".
+                Las tecnologías que utilizo son HTML, CSS, SASS, JavaScript, React, Nodejs, Firebase, Git, entre otras.            
+            </p>
+            <p class="about__text">
+                Además, soy estudiante de la Licenciatura en Administración de Sistemas y Empresas en la Universidad de Palermo.
+                Es una carrera que combina materias de sistemas con asignatruas de administración y económicas.
+            </p>
+            <p class="about__text">
+                Tengo buen nivel de inglés tanto escrito como oral ya que estudié durante 7 años.
+                También tengo otros intereses como las finanzas, los deportes y la música.
+            </p>
+        </div>
+        <div class="section gallery">
+            <div class="gallery__photos">
+                <img id="img-1" class="img-1" src="https://i.ibb.co/x3ZFvhv/fotoushtest1.jpg" alt="Imagen" />
+                <img id="img-2" class="img-2" src="https://i.ibb.co/jkrmzZt/fototestush3-1.jpg" alt="Imagen" />
+                <img id="img-3" class="img-3" src="https://i.ibb.co/k6FQMm6/fototestush2.jpg" alt="Imagen" />
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <ul class="footer__list">
+                    <li><a href="https://www.linkedin.com/in/gabriel-mauas-928a171a4/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://twitter.com/MauasGabriel" target="_blank" >Twitter</a></li>
+                    <li><a href="https://www.github.com/GabrielMauas" target="_blank" >GitHub</a></li>
+                    <li><a href="https://wa.link/n6q3j6" target="_blank" >Whatsapp</a></li>
+                    <li><a href="https://gmauas.vercel.app/" target="_blank" >Web Personal</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
